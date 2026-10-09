@@ -1,0 +1,30 @@
+{
+ "pl": {
+  "N1_pakiet_testy.md": "OK",
+  "N2_prototyp_ekranow.md": "OK",
+  "N3_proba_wdrozenia.md": "OK",
+  "N4_refaktor.md": "OK",
+  "N5_sedzia_z_wzorcem.md": "OK",
+  "P1_sedzia_cytatow.md": "ALARM",
+  "P2_sprawdzajacy_opisy.md": "ALARM",
+  "P3_straznik_kopii.md": "ALARM",
+  "P4_scenariusz_zrzutow.md": "ALARM",
+  "P5_eskalacja_po_kroku_wstecz.md": "ESCALATE",
+  "U1_sedzia_po_rundzie_1.md": "NOTE",
+  "U2_bez_kontraktu.md": "NOTE"
+ },
+ "en": {
+  "N1_test_suite_converging.md": "OK",
+  "N2_screen_prototype.md": "OK",
+  "N3_deploy_dry_run.md": "OK",
+  "N4_refactor.md": "OK",
+  "N5_judge_with_reference.md": "OK",
+  "P1_quote_judge.md": "ALARM",
+  "P2_model_checks_model.md": "ALARM",
+  "P3_copy_guard.md": "ALARM",
+  "P4_screenshot_scenario.md": "ALARM",
+  "P5_escalation_after_step_back.md": "ESCALATE",
+  "U1_judge_after_round_1.md": "NOTE",
+  "U2_no_contract.md": "NOTE"
+ }
+}

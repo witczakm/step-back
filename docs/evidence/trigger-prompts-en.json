@@ -1,0 +1,20 @@
+[
+{"query":"third round in a row the GPT reviewer rejects our invoice validator, every time it finds a different edge case in the validation itself. I want to add another exception for credit notes — before I do, look at this from the side","should_trigger":true},
+{"query":"We have a model checking summaries written by another model. After 4 rounds of prompt fixes there are more rejections than at the start (40 -> 63). docs/ROUNDS.md is up to date. What now?","should_trigger":true},
+{"query":"/step-back customer deduplication","should_trigger":true},
+{"query":"exception to the exception to the rule — again adding an if for yet another date format in the CSV parser, fifth time. maybe the whole approach is wrong?","should_trigger":true},
+{"query":"signals.py reported ALARM for track 'ticket classification' after round 2, take it from here","should_trigger":true},
+{"query":"Codex has had 3 briefs already to fix retries in the HTTP client, each one adds another timeout or retry counter and connections still hang. We're going in circles, I want a different approach, not another limit","should_trigger":true},
+{"query":"an LLM judge rates whether chatbot answers are polite, we have no human labels, and every judge prompt tweak moves the score by 20 points. Should I add a second judge to vote?","should_trigger":true},
+{"query":"the backup guard already has its own lock, timeout, watchdog and exception list, and review still finds holes. do we even need this guard?","should_trigger":true},
+{"query":"workaround on a workaround in the schema migration — every fix to migration 045 needs another repair migration. stop and do a frame review","should_trigger":true},
+{"query":"write a unit test for parse_date in utils/dates.py, it should handle ISO and dd.mm.yyyy","should_trigger":false},
+{"query":"test_import_orders broke after my last commit with KeyError 'customer_id' — fix it","should_trigger":false},
+{"query":"plan a 3-stage refactor of the payments module, I want to split PaymentService into smaller classes","should_trigger":false},
+{"query":"run a council: should we move from Postgres to SQLite in a single-user desktop app","should_trigger":false},
+{"query":"save a lesson for later: always back up the database with backup_offline.sh before a migration","should_trigger":false},
+{"query":"screen prototype: round 2 had 2 vitest failures, round 3 has 0 — write a summary of changes for the PR description","should_trigger":false},
+{"query":"compare three Python task queue libraries (Celery, RQ, Dramatiq) for ease of deployment","should_trigger":false},
+{"query":"review my PR #42 that adds caching to the /api/products endpoint","should_trigger":false},
+{"query":"revert my last commit, I accidentally pushed .env.example with wrong values","should_trigger":false}
+]

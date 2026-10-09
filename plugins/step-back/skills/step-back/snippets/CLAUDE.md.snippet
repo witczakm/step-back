@@ -1,0 +1,6 @@
+## Step back (workaround-on-workaround loops)
+- New work track (a step that will take several rounds): before round 1 add the Output / Gates / Budget lines to `docs/ROUNDS.md` (template: step-back skill, `assets/ROUNDS_template.md`).
+- End executor briefs with the required report line `ROUND | gate | PASS/NO | number of problems | C/O/M/R` (`assets/brief_lines.md`); when accepting a round, check it and add the row to `docs/ROUNDS.md`.
+- After each accepted round run `/step-back` (it counts signals first and stops in one line when everything is OK). ALARM -> act on the card before the next round; ESCALATE -> a human decides, not another review.
+- When an oracle (test, execution) says PASS and the NO comes from a model reviewer, model findings do not block — they go to a list for human decision.
+- Every review request includes: "should this mechanism exist at all, and what would we remove so this class of defects cannot arise?"

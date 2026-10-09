@@ -1,0 +1,20 @@
+[
+{"query":"trzecia runda z rzędu recenzent GPT odrzuca nam walidator faktur, za każdym razem znajduje inny przypadek brzegowy w samej walidacji. chcę dopisać kolejny wyjątek dla faktur korygujących — zanim to zrobię, spójrz na to z boku","should_trigger":true},
+{"query":"Mamy model, który sprawdza streszczenia pisane przez drugi model. Po 4 rundach poprawek promptu odrzuceń jest więcej niż na początku (z 40 do 63). docs/RUNDY.md jest aktualny. Co robimy?","should_trigger":true},
+{"query":"/krok-wstecz deduplikacja klientów","should_trigger":true},
+{"query":"wyjątek od wyjątku od reguły — znowu dopisujemy if dla kolejnego formatu daty w parserze CSV, to już piąty raz. może cała droga jest zła?","should_trigger":true},
+{"query":"sygnaly.py pokazał ALARM dla toru 'klasyfikacja zgłoszeń' po rundzie 2, przejdź z tym dalej","should_trigger":true},
+{"query":"Codex dostał już 3 briefy na naprawę retry w kliencie HTTP, każdy dokłada nowy limit czasu albo licznik prób i dalej wiszą połączenia. Kręcimy się w kółko, chcę innego podejścia, nie kolejnego limitu","should_trigger":true},
+{"query":"sędzia LLM ocenia, czy odpowiedzi chatbota są grzeczne, nie mamy żadnych etykiet od ludzi, a każda poprawka promptu sędziego zmienia wynik o 20 punktów. Mam dodać drugiego sędziego do głosowania?","should_trigger":true},
+{"query":"strażnik kopii zapasowych ma już własną blokadę, timeout, watchdog i listę wyjątków, a review dalej znajduje dziury. czy tego strażnika w ogóle potrzebujemy?","should_trigger":true},
+{"query":"obejście do obejścia w migracji schematu — każda poprawka migracji 045 wymaga kolejnej migracji naprawczej. zatrzymaj się i zrób przegląd ramy","should_trigger":true},
+{"query":"napisz test jednostkowy dla funkcji parse_date w utils/dates.py, która ma obsługiwać formaty ISO i dd.mm.rrrr","should_trigger":false},
+{"query":"test test_import_orders padł po moim ostatnim commicie z KeyError 'customer_id' — napraw","should_trigger":false},
+{"query":"zaplanuj mi refaktor modułu płatności na 3 etapy, chcę rozbić PaymentService na mniejsze klasy","should_trigger":false},
+{"query":"przeprowadź konsylium: czy przechodzić z Postgresa na SQLite w aplikacji desktopowej dla 1 użytkownika","should_trigger":false},
+{"query":"zapisz lekcję na przyszłość: przed migracją zawsze rób kopię bazy przez backup_offline.sh","should_trigger":false},
+{"query":"prototyp ekranów: runda 2 miała 2 błędy vitest, runda 3 już 0 — zrób podsumowanie zmian do opisu PR","should_trigger":false},
+{"query":"porównaj trzy biblioteki do kolejek zadań w Pythonie (Celery, RQ, Dramatiq) pod kątem prostoty wdrożenia","should_trigger":false},
+{"query":"zrób code review mojego PR #42 z dodaniem cache do endpointu /api/products","should_trigger":false},
+{"query":"cofnij ostatni commit, wrzuciłem przez pomyłkę plik .env.example ze złymi wartościami","should_trigger":false}
+]

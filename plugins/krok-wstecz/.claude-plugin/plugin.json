@@ -1,0 +1,10 @@
+{
+  "name": "krok-wstecz",
+  "version": "0.1.0",
+  "description": "Zamiast obejścia do obejścia: gdy poprawki jednego kroku kręcą się w kółko, przegląd ramy w świeżym kontekście proponuje usunąć krok albo zmienić jego wytwór, zamiast dokładać kolejnego sędziego, strażnika czy regułę.",
+  "author": { "name": "Michał Witczak", "url": "https://github.com/witczakm" },
+  "homepage": "https://github.com/witczakm/step-back",
+  "repository": "https://github.com/witczakm/step-back",
+  "license": "MIT",
+  "keywords": ["agent-skills", "claude-code", "codex", "root-cause", "workflow", "llm-as-judge", "evals"]
+}

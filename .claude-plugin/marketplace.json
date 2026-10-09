@@ -1,0 +1,17 @@
+{
+  "name": "step-back",
+  "description": "Stop patching the patch: a frame review for AI-agent work that goes in circles (English and Polish editions).",
+  "owner": { "name": "Michał Witczak", "url": "https://github.com/witczakm" },
+  "plugins": [
+    {
+      "name": "step-back",
+      "source": "./plugins/step-back",
+      "description": "English edition. When fixes go in circles, look at what the step produces and change or remove it instead of adding another controller."
+    },
+    {
+      "name": "krok-wstecz",
+      "source": "./plugins/krok-wstecz",
+      "description": "Wersja polska. Gdy poprawki kręcą się w kółko — zmień albo usuń to, co krok wytwarza, zamiast dokładać kolejny kontroler."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "step-back",
+  "version": "0.1.0",
+  "description": "Stop patching the patch: when fixes to one step go in circles, a frame review in a fresh context proposes removing the step or changing what it produces, instead of adding another judge, guard or rule.",
+  "author": { "name": "Michał Witczak", "url": "https://github.com/witczakm" },
+  "homepage": "https://github.com/witczakm/step-back",
+  "repository": "https://github.com/witczakm/step-back",
+  "license": "MIT",
+  "keywords": ["agent-skills", "claude-code", "codex", "root-cause", "workflow", "llm-as-judge", "evals"]
+}

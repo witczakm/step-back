@@ -1,0 +1,4 @@
+## Step back (for executors)
+- End every round report with one line per gate: `ROUND <n> | <gate> | <PASS/NO> | <number of problems> | <C/O/M/R> | <what changed>`. Report gate results from the full run, not a subset of tests.
+- C = added or changed a control (rule, judge, guard, limit); O = changed the output; M = changed the measurement; R = removed a step or mechanism.
+- If you are about to propose another rule or exception for the same gate a second time in a row, say so explicitly in the report and propose, alongside it, changing the output or removing the step.
