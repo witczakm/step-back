@@ -1,17 +1,24 @@
 # krok-wstecz (step-back)
 
-> **Zamiast obejścia do obejścia.** Przegląd ramy dla pracy z agentami AI, która kręci się w kółko.
+[English](README.md) · **Polski**
+
+> **Zamiast obejścia do obejścia.** Skill dla agentów AI (Claude Code, Codex, aplikacja Claude), który
+> zauważa, że kolejne rundy poprawek kręcą się w kółko, i pyta, czy zawodzący krok w ogóle powinien istnieć.
 >
 > Gdy agent dokłada kolejnych sędziów, strażników, reguły i wyjątki do kroku, który ciągle zawodzi,
-> `krok-wstecz` każe spojrzeć na **to, co ten krok wytwarza**, i zmienić wytwór albo usunąć krok.
+> `krok-wstecz` robi **przegląd ramy**: zamiast poprawiać krok po raz kolejny, kwestionuje sam krok.
+> Patrzy na **to, co ten krok wytwarza** (jego faktyczny wynik, np. pliki, rekordy albo oceny)
+> i rekomenduje zmianę tego wyniku albo usunięcie kroku.
 >
-> 🇬🇧 English version: **[README.md](README.md)** (skill `step-back`)
+> **Dla kogo:** dla każdego, kto prowadzi wielorundową pracę z agentami AI. **Wypróbuj w minutę:**
+> [Szybki start](#szybki-start). Angielska wersja skilla: `step-back`.
 
 [![Wersja](https://img.shields.io/badge/wersja-0.1.0-blue)](CHANGELOG.md)
 [![Licencja](https://img.shields.io/badge/licencja-MIT-green)](LICENSE)
 [![Platformy](https://img.shields.io/badge/platformy-Claude%20Code%20%C2%B7%20Codex%20%C2%B7%20aplikacja%20Claude-orange)](#instalacja)
 [![Format](https://img.shields.io/badge/format-Agent%20Skills-blueviolet)](https://agentskills.io)
 [![Status](https://img.shields.io/badge/status-eksperymentalny-lightgrey)](EVALS.md)
+[![test](https://github.com/witczakm/step-back/actions/workflows/test.yml/badge.svg)](.github/workflows/test.yml)
 
 <details>
 <summary><b>Spis treści</b></summary>
@@ -63,6 +70,7 @@ W Claude Code:
 ```
 
 Utwórz w projekcie plik `docs/RUNDY.md`. Każdy *tor* (krok, nad którym idzie kilka rund) to osobna sekcja: trzy linie nagłówka i jeden wiersz na każdą rundę.
+`Wytwór:` to to, co krok produkuje, `Bramki:` mówią, kto wydaje werdykt PASS/NO (tu: model), `Budżet:` to liczba rund, na którą się godzisz.
 
 ```markdown
 ## Tor: sprawdzanie dowodu
@@ -91,7 +99,7 @@ ALARM     | sprawdzanie dowodu | rund: 2
 Przy ALARM przegląd rusza w świeżym kontekście i zwraca kartę decyzji na jedną stronę: co krok
 naprawdę wytwarza, pięć alternatyw, jedną rekomendację, linię netto („mechanizmów kontroli: 5 → 2”)
 i pole na twoją decyzję ([pełna karta z prawdziwego przebiegu, po angielsku](docs/evidence/e2e-alarm-card.txt)).
-Gdy rundy się zbiegają, dostajesz jedną linię i nic więcej.
+Gdy rundy się zbiegają, dostajesz [jedną linię](docs/evidence/e2e-ok-oneliner.txt) i nic więcej.
 
 ## Przykład z życia
 
@@ -181,7 +189,7 @@ co jest prawdą.
 /plugin install step-back@step-back        # angielski
 ```
 
-Skille z pluginów mają przedrostek, więc komenda to `/krok-wstecz:krok-wstecz`.
+Skille z pluginów mają przedrostek, więc komenda to `/krok-wstecz:krok-wstecz` (albo `/step-back:step-back`).
 
 <details>
 <summary><b>Claude Code i Codex: skrypt instalacyjny (bez sieci, z kopią zapasową istniejącej instalacji)</b></summary>
@@ -189,17 +197,18 @@ Skille z pluginów mają przedrostek, więc komenda to `/krok-wstecz:krok-wstecz
 ```bash
 git clone https://github.com/witczakm/step-back.git
 cd step-back
-./install.sh --lang pl       # wersja polska do ~/.claude/skills i ~/.codex/skills
-./install.sh --lang pl --dry-run   # tylko podgląd
+./install.sh --lang pl       # wersja polska (krok-wstecz) do ~/.claude/skills i ~/.codex/skills
+./install.sh                 # wersja angielska (step-back)
+./install.sh --dry-run       # tylko podgląd
 ```
 
-Po takiej instalacji komenda to po prostu `/krok-wstecz`. Wymaga `python3`.
+Po takiej instalacji komenda to po prostu `/krok-wstecz` (albo `/step-back`). Wymaga `python3`.
 </details>
 
 <details>
 <summary><b>Aplikacja Claude (web, desktop): paczka zip</b></summary>
 
-Pobierz `dist/krok-wstecz-pl.zip` i dodaj w Customize → Skills. W aplikacji nie ma rozwidlonego
+Pobierz `dist/krok-wstecz-pl.zip` (albo `dist/step-back-en.zip`) i dodaj w Customize → Skills. W aplikacji nie ma rozwidlonego
 kontekstu ani wstępnie wykonywanego polecenia: skill sam uruchamia skrypt i pracuje w głównej
 rozmowie. Zobacz [Ograniczenia](#ograniczenia).
 </details>
@@ -237,6 +246,7 @@ Skill działa najlepiej w trzech miejscach, które i tak już masz. Gotowe linie
   w nich sekretów.
 - Inne rodziny modeli woła **tylko wtedy, gdy masz już takie narzędzie** (drugi CLI agenta albo skrypt
   konsensusu), w budżecie 5 wywołań i zgodnie z twoimi ustawieniami uprawnień. W przeciwnym razie karta mówi `DEGRADACJA: jedna rodzina modeli`.
+  Nie kieruj go na nic, czego nie wysłałbyś do modelu w chmurze.
 - Niczego nie blokuje, nie zmienia kodu i nie robi commitów. Wydaje kartę, a decydujesz ty.
 
 ## Ograniczenia
