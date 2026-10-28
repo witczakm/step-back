@@ -292,7 +292,7 @@ The review runs as a fresh-context auditor that reads real records, and the outc
 on which a human decides. See [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
 
 Related: [konsylium](https://github.com/witczakm/konsylium), a multi-perspective council for decisions, and
-[cycle-lifecycle](https://github.com/witczakm/cycle-lifecycle), project memory across agent sessions.
+[cykl-lifecycle](https://github.com/witczakm/cykl-lifecycle), project memory across agent sessions.
 
 ## Contributing and license
 
