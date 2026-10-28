@@ -1,11 +1,17 @@
 # step-back
 
-> **Stop patching the patch.** A frame review for AI-agent work that goes in circles.
+**English** · [Polski](README.pl.md)
+
+> **Stop patching the patch.** A skill for AI agents (Claude Code, Codex, the Claude app) that spots
+> when rounds of fixes go in circles and asks whether the failing step should exist at all.
 >
 > When your agent keeps adding judges, guards, rules and exceptions to a step that keeps failing,
-> `step-back` makes it look at **what the step produces** — and change that, or remove the step.
+> `step-back` runs a **frame review**: instead of fixing the step once more, it questions the step itself.
+> It looks at **what the step produces** (its actual output, such as files, records or verdicts) and
+> recommends changing that output or removing the step.
 >
-> 🇵🇱 Wersja polska: **[README.pl.md](README.pl.md)** (skill `krok-wstecz`)
+> **Who it is for:** anyone who runs multi-round work with AI agents. **Try it in a minute:**
+> [Quick start](#quick-start). Polish edition of the skill: `krok-wstecz`.
 
 [![Version](https://img.shields.io/badge/version-0.1.0-blue)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
@@ -62,7 +68,8 @@ In Claude Code:
 /plugin install step-back@step-back        # English edition
 ```
 
-Create `docs/ROUNDS.md` in your project. One section per *track* (a step that goes through several rounds), three header lines, one row per round:
+Create `docs/ROUNDS.md` in your project. One section per *track* (a step that goes through several rounds), three header lines, one row per round.
+`Output:` is what the step makes, `Gates:` says who gives the PASS/NO verdict (here: a model), `Budget:` is how many rounds you allow.
 
 ```markdown
 ## Track: evidence check
@@ -89,8 +96,8 @@ ALARM     | evidence check | rounds: 2
 ```
 
 On ALARM the review runs in a fresh context and returns a one-page decision card: what the step
-really produces, five alternatives, one recommendation and a box for your decision
-([a full real card](docs/evidence/e2e-alarm-card.txt)). On a converging track you get
+really produces, five alternatives, one recommendation, a net line (“control mechanisms: 5 → 2”) and a
+box for your decision ([a full card from a real run](docs/evidence/e2e-alarm-card.txt)). On a converging track you get
 [one line](docs/evidence/e2e-ok-oneliner.txt) and nothing else.
 
 ## A worked example
@@ -188,7 +195,7 @@ cd step-back
 ./install.sh --dry-run       # preview only
 ```
 
-Installed this way, the command is simply `/step-back`. Requires `python3`.
+Installed this way, the command is simply `/step-back` (or `/krok-wstecz`). Requires `python3`.
 </details>
 
 <details>
@@ -285,7 +292,7 @@ The review runs as a fresh-context auditor that reads real records, and the outc
 on which a human decides. See [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
 
 Related: [konsylium](https://github.com/witczakm/konsylium), a multi-perspective council for decisions, and
-[cycle-lifecycle](https://github.com/witczakm/cycle-lifecycle), project memory across agent sessions.
+[cykl-lifecycle](https://github.com/witczakm/cykl-lifecycle), project memory across agent sessions.
 
 ## Contributing and license
 
